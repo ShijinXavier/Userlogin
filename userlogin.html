@@ -1,0 +1,47 @@
+<?php include('db_connect')?>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+    <body>
+        <div class="Login">
+        <form action="register.php" method="post" role="form">
+            <h1>Login</h1>
+        <div class="input-box">
+            <input type="text" name="user_name" id="user_name" placeholder="Enter your name" required>
+            <i class='bx bxs-user' ></i>
+         </div>
+         <div class="input-box">
+            <input type="email" name="email" id="email" placeholder="Enter your email" required>
+            <i class='bx bx-envelope' ></i> 
+         </div>
+         <div class="input-box">
+            <input type="number" name="phone_no" id="phone_no" placeholder="Enter your number" required>
+            <i class='bx bx-mobile'></i>
+         </div>
+         <div class="input-box">
+            <input type="password" name="pwd" id="pwd" placeholder="Enter password" required>
+            <i class='bx bx-lock-alt' ></i>
+         </div>
+         <div class="remember-forgot">
+            <label>
+                <input type="checkbox">Remember Me
+            </label>
+            <a href="#">Forgot Password?</a>
+         </div>
+         <button type="submit" class="btn">Login</button>
+         <div class="register-link">
+            <p>Don't have an account?<a href="#">Register</a></p>
+         </div>
+        </form>
+    </body>
+</html>
+<?php
+if(isset($_POST['register'])){
+    $name =$_POST['user_name'];
+    $name =$_POST['email'];
+    $name =$_POST['Phone_no'];
+    $name =$_POST['pwd'];
+}
+?>

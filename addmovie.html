@@ -1,0 +1,104 @@
+<?php
+$title="";
+$poster="";
+
+?>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Detail Form</title>
+    <link rel="stylesheet" href="style0.css">
+</head>
+<body>
+
+    <div class="container">
+        <u><h2>Movie Details</h2></u>
+        <form action="" method="post">
+            <label for="title">Movie Title *</label>
+            <input type="text" id="title" name="title" value="" placeholder="Enter Movie name" required>
+
+            <label for="poster">Poster *</label>
+            <input type="file" id="poster" name="poster" accept="image/*">
+
+            <label for="time">Duration *</label>
+            <div class="time-input">
+              Hour<input type="number" id="hours" name="hours" value="" min="0" max="24" required>
+              Minute<input type="number" id="minutes" name="minutes" value="" min="0" max="59" required> 
+            </div>
+            <?php 
+            if(isset($_SESSION['status']))
+            {
+                ?>
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong></strong> <?php echo $_SESSION['status']; ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                <?php
+                 unset($_SESSION['status']);
+            }
+        ?>
+            <form action="addgenre.php" method="post">
+            <label>Genres*</label>
+            <div class="genres" >
+                <input type="checkbox" id="action" name="genre" value="action">
+                <label for="action">Action</label>
+                <input type="checkbox" id="adventure" name="genre" value="adventure">
+                <label for="adventure">Adventure</label>
+                <input type="checkbox" id="biography" name="genre" value="biography">
+                <label for="biography">Biography</label>
+                <input type="checkbox" id="comedy" name="genre" value="comedy">
+                <label for="comedy">Comedy</label>
+                <input type="checkbox" id="crime" name="genre" value="crime">
+                <label for="crime">Crime</label>
+                <input type="checkbox" id="documentery" name="genre" value="documentery">
+                <label for="documentery">Documentery</label>
+                <input type="checkbox" id="drama" name="genre" value="drama">
+                <label for="drama">Drama</label>
+                <input type="checkbox" id="family" name="genre" value="family">
+                <label for="family">Family</label>
+                <input type="checkbox" id="fantasy" name="genre" value="fantasy">
+                <label for="fantasy">Fantasy</label>
+                <input type="checkbox" id="history" name="genre" value="history">
+                <label for="history">History</label>
+                <input type="checkbox" id="horror" name="genre" value="horror">
+                <label for="horror">Horror</label>
+                <input type="checkbox" id="musical" name="genre" value="musical">
+                <label for="musical">Musical</label>
+                <input type="checkbox" id="mystery" name="genre" value="mystery">
+                <label for="mystery">Mystery</label>
+                <input type="checkbox" id="romance" name="genre" value="romance">
+                <label for="romance">Romance</label>
+                <input type="checkbox" id="sci-fi" name="genre" value="sci-fi">
+                <label for="sci-fi">Sci-fi</label>
+                <input type="checkbox" id="sequel" name="genre" value="sequel">
+                <label for="sequel">Sequel</label>
+                <input type="checkbox" id="social" name="genre" value="social">
+                <label for="social">Social</label>
+                <input type="checkbox" id="sport" name="genre" value="sport">
+                <label for="sport">Sport</label>
+                <input type="checkbox" id="thriller" name="genre" value="thriller">
+                <label for="thriller">Thriller</label>
+                <input type="checkbox" id="war" name="genre" value="war">
+                <label for="war">War</label>
+                <input type="checkbox" id="western" name="genre" value="western">
+                <label for="western">Western</label>
+                <input type="checkbox" id="others" name="genre" value="others">
+                <label for="others">Others</label>
+            </div>
+            </form>
+            <label for="description">Description*</label>
+            <textarea rows="5" cols="40" id="description" name="description"></textarea>
+            <label for="release_date">Release date*</label>
+            <input type="date" id="release_date" name="release_date">
+
+        <input type="submit" name="save" value="Submit">
+        </form>
+    </div>
+
+</body>
+</html>
